@@ -1,0 +1,44 @@
+body {
+    background-color: #1e1e1e;
+}
+
+
+h1 {
+    color: #f6f6f6;
+    font-family: 'Amatic SC', cursive;
+}
+
+.my-text {
+    color: #f6f6f6;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.labels {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+button {
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 5%;
+}
+
+p, h5 {
+    display: inline
+}
+
+.pdf-input {
+    margin-top: 2%;
+}
+
+.pdf-img {
+    margin-top: 8%;
+}
+
+textarea#inputWord {
+    background: #f6f6f6;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+table{
+    font-family: 'JetBrains Mono', monospace;
+}

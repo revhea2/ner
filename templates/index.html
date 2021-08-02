@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Search - NER</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+
+
+    <div class="col-xs-1 text-center">
+    <h1>Document Searching Optimization | Named Entity Recognition </h1>
+    </div>
+
+    <div class="row">
+
+        <div class="d-flex justify-content-center pdf-img" >
+            <img src="{{ url_for('static', filename='pdf.png') }}" width="10%" >
+        </div>
+    </div>
+
+    <form action="/" method="POST" enctype=multipart/form-data>
+        <div class="d-flex justify-content-center">
+                <div class="w-50 p-3 text-center pdf-input labels" >
+                <input type="file" class="form-control" id="customFile" name=file />
+                <button type="submit" value="Submit" class="btn btn-secondary">Upload</button>
+            </div>
+        </div>
+    </form>
+
+    <br/>
+    <br/>
+
+    {% if text_from_pdf %}
+        <div class="form-group">
+            <p class="my-text"> Preview</p>
+            <textarea type="text" rows="20" class="form-control" id="inputWord" name="sentence" readonly>{{text_from_pdf}}</textarea>
+        </div>
+    {% endif %}
+
+
+
+
+    <form action="/search"  >
+        <div class="d-flex justify-content-center pdf-img" >
+            <input type="image" src="{{ url_for('static', filename='search.png') }}" width="5%" />
+        </div>
+        <br/>
+
+
+        <div class="col-xs-1 text-center">
+            <p class="my-text"> Click to Search</p>
+        </div>
+
+    </form>
+
+
+
+
+    </br></br>
+
+
+
+</div>
+
+
+</body>
+</html>
